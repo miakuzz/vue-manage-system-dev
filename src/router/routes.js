@@ -1,10 +1,11 @@
 // import Vue from 'vue'
 // import Router from 'vue-router'
 
-import Login from '../components/page/Login.vue'
+
 import Home from '../components/common/Home.vue'
 import Test from '../components/common/test.vue'
-
+import Login from '../components/page/Login.vue'
+import ReadMe from '../components/page/ReadMe.vue'
 
 
 // Vue.use(Router)
@@ -26,9 +27,15 @@ const routes = [
   { path: '/', redirect: '/login' },
   { path: '/login', component: Login, name: 'login'},
   {
-    path: '/index',
+    path: '/home',
     component: Home,
-    name: 'home'
+    name: 'home',
+    children: [
+      {
+        path: '/readme',
+        component: ReadMe
+      }
+    ]
   },
   {
     path: '/test',

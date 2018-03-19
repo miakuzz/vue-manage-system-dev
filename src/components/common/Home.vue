@@ -3,7 +3,7 @@
     <el-container>
       <v-head></v-head>
     </el-container>
-    <el-container>
+    <el-container class="container">
       <v-sidebar></v-sidebar>
       <el-main>
         <transition name="move" mode="out-in">
