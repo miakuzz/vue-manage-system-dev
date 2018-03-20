@@ -1,9 +1,68 @@
-.header{
-  background: #333333;
-  color: rgb(255, 208, 75);
-}
-
 .login-wrap{
   background: url('../../images/login-bg.jpg') no-repeat center center;
   background-size: cover;
+}
+
+.header{
+  background: #fff;
+  color: #233333;
+  border-bottom: 1px solid #cfd8dc;
+}
+
+.user-info, .user-info .el-dropdown-link{
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.user-info:hover,.user-info .el-dropdown-link:hover{
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.sidebar{
+  background:#304047;
+}
+
+.sidebar ul{
+  background: transparent;
+}
+
+.sidebar .el-menu-item,
+.sidebar .el-submenu__title,
+.sidebar .el-menu-item i,
+.sidebar .el-submenu__title i{
+  color:#fff;
+}
+
+.sidebar .el-menu .el-menu-item:focus,
+.sidebar .el-menu .el-menu-item:hover,
+.sidebar .el-submenu__title:hover,
+.sidebar .is-opened .el-menu-item.is-active:hover{
+  background:#577380;
+  border-left-color: rgb(251, 194, 38);
+}
+
+.sidebar .is-active,
+.sidebar .is-active .el-submenu__title{
+  border-left-color: rgb(251, 194, 38);
+}
+
+.sidebar .is-opened .el-menu-item.is-active,
+.sidebar .is-opened .el-menu-item.is-active:focus{
+  background:#577380;
+  border-left-color: transparent;
+}
+
+.sidebar .is-active,
+.sidebar .is-active i,
+.sidebar .is-active .el-submenu__title
+{
+  color:rgb(251, 194, 38);
+}
+
+.sidebar li{
+  -webkit-transition:border-color 0.1s ease-in-out 0s,background-color 0.1s ease-in-out 0s,box-shadow 0.1s ease-in-out 0s;
+  transition:border-color 0.1s ease-in-out 0s,background-color 0.1s ease-in-out 0s,box-shadow 0.1s ease-in-out 0s;
+}
+
+.container{
+  background: #f1f1f1;
 }

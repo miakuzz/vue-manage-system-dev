@@ -11,9 +11,9 @@
         </transition>
       </el-main>
     </el-container>
-    <div class="content">
+    <!-- <div class="content">
       <transition name="move" mode="out-in"><router-view></router-view></transition>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -27,3 +27,8 @@ export default {
   }
 }
 </script>
+
+<style>
+
+</style>
+

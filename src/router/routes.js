@@ -29,17 +29,20 @@ const routes = [
   {
     path: '/home',
     component: Home,
-    name: 'home',
     children: [
       {
-        path: '/readme',
+        path: '/',
+        component: ReadMe
+      },
+      {
+        path: '/basetable',
+        component: ReadMe
+      },
+      {
+        path: '/vuetable',
         component: ReadMe
       }
     ]
-  },
-  {
-    path: '/test',
-    component: Test
   }
 ]
 export default routes

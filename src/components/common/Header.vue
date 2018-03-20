@@ -1,10 +1,12 @@
 <template>
   <el-header class="header">
-    <div class="logo">管理系统</div>
+    <div class="logo">Director</div>
     <div class="user-info">
       <el-dropdown @command="handleCommand">
         <div class="el-dropdown-link">
           <img class="user-logo" src="../../../static/images/img.jpg">
+          {{username}}
+          <i class="el-icon-caret-bottom"></i>
         </div>
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item command="loginout">退出</el-dropdown-item>
@@ -18,7 +20,7 @@
 export default {
   data() {
     return {
-      name: '111'
+      name: 'admin'
     }
   },
   computed: {
@@ -39,15 +41,15 @@ export default {
 
 <style scoped>
   .header, .user-info, .user-info .el-dropdown-link{
-    height: 60px;
-    line-height: 60px;
+    height: 55px!important;
+    line-height: 55px!important;
   }
 
   .header{
     position: relative;
     box-sizing: border-box;
     width: 100%;
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .header .logo{
@@ -57,16 +59,14 @@ export default {
   .user-info {
     float: right;
     font-size: 16px;
-    color: #fff;
   }
   .user-info .el-dropdown-link{
     text-align:center;
-    color: #fff;
     cursor: pointer;
   }
   .user-info .user-logo{
-    width:40px;
-    height:40px;
+    width:35px;
+    height:35px;
     border-radius: 50%;
     vertical-align:middle;
   }

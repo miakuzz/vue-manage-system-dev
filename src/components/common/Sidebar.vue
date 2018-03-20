@@ -1,6 +1,6 @@
 <template>
   <el-aside width="200px" class="sidebar">
-    <el-menu :default-active="onRoutes" class="el-menu-vertical-demo" theme="dark" unique-opened router>
+    <el-menu :default-active="onRoutes" class="el-menu-vertical-demo" unique-opened router>
       <template v-for="item in items">
         <template v-if="item.subs">
           <el-submenu :index="item.index">
@@ -26,7 +26,7 @@
                 items: [
                     {
                         icon: 'el-icon-setting',
-                        index: 'readme',
+                        index: 'home',
                         title: '自述'
                     },
                     {
@@ -35,8 +35,14 @@
                         title: '表格',
                         subs: [
                             {
-                                index: 'basetable',
-                                title: '基础表格'
+                                index: '2-1',
+                                title: '基础表格',
+                                subs:[
+                                  {
+                                    index: 'basetable',
+                                    title: '基础表格'
+                                  }
+                                ]
                             },
                             {
                                 index: 'vuetable',
@@ -88,14 +94,22 @@
     }
 </script>
 
-<style scoped>
+<style>
     .sidebar{
         display: block;
-        width: 250px;
-        background: #2E363F;
+        width: 220px!important;
         height:100%;
     }
+
     .sidebar > ul {
         height:100%;
     }
+
+    .sidebar li>.el-submenu__title, .sidebar .el-menu-item{
+      height:44px !important;
+      line-height: 28px !important;
+      padding:8px 15px 8px 20px;
+      border-left: 4px solid transparent;
+    }
+
 </style>
