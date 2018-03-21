@@ -5,8 +5,8 @@
         <img src="/static/images/icon.png">
       </div>
       <el-form :model="form" :rules="rules" ref="form" label-width="0px" class="ms-form">
-        <el-form-item prop="username">
-          <el-input type="text" v-model="form.username" placeholder="用户名" @keyup.enter.native="submitForm('form')"></el-input>
+        <el-form-item prop="loginid">
+          <el-input type="text" v-model="form.loginid" placeholder="用户名" @keyup.enter.native="submitForm('form')"></el-input>
         </el-form-item>
         <el-form-item prop="password">
           <el-input type="password" v-model="form.password" placeholder="密码" @keyup.enter.native="submitForm('form')"></el-input>
@@ -28,11 +28,11 @@ export default {
       loading: false,
       requireVerify: false,
       form: {
-        username: '',
+        loginid: '',
         password: ''
       },
       rules: {
-        username: [
+        loginid: [
           {required: true, message: '请填写用户名', trigger: 'blur'}
         ],
         password: [
@@ -52,7 +52,7 @@ export default {
           if(self.requireVerify){
             // 预留了验证码功能
           } else {
-            data.username = self.form.username
+            data.loginid = self.form.loginid
             data.password = self.form.password
           }
           self.apiPost('admin/base/login', data).then((res) => {
@@ -60,8 +60,10 @@ export default {
               self.loading = !self.loading
               self.handleError(res)
             } else {
-              self.resetCommonData(res.data)
+              //self.refreshVerify()
+              //self.resetCommonData(res.data)
               _g.toastMsg('success', '登录成功')
+              router.replace('/home')
             }
           })
         } else {
