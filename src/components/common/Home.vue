@@ -1,15 +1,15 @@
 <template>
   <div class="wrapper">
-    <el-container>
+    <el-container  class="container" direction="vertical">
       <v-head></v-head>
-    </el-container>
-    <el-container class="container">
-      <v-sidebar></v-sidebar>
-      <el-main>
-        <transition name="move" mode="out-in">
-          <router-view></router-view>
-        </transition>
-      </el-main>
+      <el-container class="container">
+        <v-sidebar></v-sidebar>
+        <el-main>
+          <transition name="move" mode="out-in">
+            <router-view></router-view>
+          </transition>
+        </el-main>
+      </el-container>
     </el-container>
     <!-- <div class="content">
       <transition name="move" mode="out-in"><router-view></router-view></transition>
