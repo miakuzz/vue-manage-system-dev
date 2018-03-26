@@ -16,3 +16,21 @@ a{text-decoration: none}
 .wrapper .container{
   height:100%;
 }
+
+.el-breadcrumb{
+  padding:10px 0;
+}
+
+.el-pagination{
+  padding-left:0;
+  padding-right:0;
+}
+
+.el-table th{
+
+}
+
+.el-table__footer-wrapper thead div, .el-table__header-wrapper thead div{
+
+  color: #1f2d3d;
+}

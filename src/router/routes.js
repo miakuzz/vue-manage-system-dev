@@ -3,9 +3,9 @@
 
 
 import Home from '../components/common/Home.vue'
-import Test from '../components/common/test.vue'
 import Login from '../components/page/Login.vue'
 import ReadMe from '../components/page/ReadMe.vue'
+import File from '../components/page/File.vue'
 
 
 // Vue.use(Router)
@@ -24,8 +24,8 @@ import ReadMe from '../components/page/ReadMe.vue'
 //   ]
 // })
 const routes = [
-  { path: '/', redirect: '/login' },
   { path: '/login', component: Login, name: 'login'},
+  { path: '/', redirect: '/home' },
   {
     path: '/home',
     component: Home,
@@ -35,14 +35,11 @@ const routes = [
         component: ReadMe
       },
       {
-        path: '/basetable',
-        component: ReadMe
-      },
-      {
-        path: '/vuetable',
-        component: ReadMe
-      }
+        path: '/tools/file',
+        component: File
+     }
     ]
   }
+
 ]
 export default routes

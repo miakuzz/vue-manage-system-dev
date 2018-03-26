@@ -1,6 +1,6 @@
 <template>
   <el-header class="header">
-    <div class="logo">Director</div>
+    <div class="logo">SOMETHING</div>
     <div class="user-info">
       <el-dropdown @command="handleCommand">
         <div class="el-dropdown-link">

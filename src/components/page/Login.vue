@@ -55,7 +55,7 @@ export default {
             data.loginid = self.form.loginid
             data.password = self.form.password
           }
-          self.apiPost('admin/base/login', data).then((res) => {
+          self.apiPost('admin/user/login', data).then((res) => {
             if(res.code != 200){
               self.loading = !self.loading
               self.handleError(res)
