@@ -3,8 +3,8 @@
 import 'babel-polyfill'
 import Vue from 'vue'
 import App from './App'
-import routes  from './router/routes'
-import VueRouter from 'vue-router'
+import router  from './router/routes'
+//import VueRouter from 'vue-router'
 import store from './vuex/store'
 import _g from '../static/js/global'
 import axios from 'axios'
@@ -12,6 +12,7 @@ import Lockr from 'lockr'
 import Cookies from 'js-cookie'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'    // 默认主题
+import './permission.js'
 
 axios.defaults.baseURL = '/something'
 axios.defaults.timeout = 1000 * 15
@@ -19,14 +20,14 @@ axios.defaults.headers.authKey = Lockr.get('authKey')
 axios.defaults.headers.sessionId = Lockr.get('sessionId')
 axios.defaults.headers['Content-Type'] = 'application/json'
 
-const router = new VueRouter({
-  mode: 'history',
-  base: __dirname,
-  routes
-})
+// const router = new VueRouter({
+//   mode: 'history',
+//   base: __dirname,
+//   routes
+// })
 
 Vue.use(ElementUI)
-Vue.use(VueRouter)
+//Vue.use(VueRouter)
 
 window.router = router
 window.store = store

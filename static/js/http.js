@@ -70,35 +70,32 @@ const apiMethods = {
     handleError(res) {
       if (res.code){
         switch (res.code) {
-          case 101:
-            console.log('cookie = ', Cookies.get('rememberPwd'))
-            if (Cookies.get('rememberPwd')) {
-              let data = {
-                rememberKey: Lockr.get('rememberKey')
-              }
-              this.reAjax('admin/base/relogin', data).then((res) => {
-                this.handelResponse(res, (data) => {
-                  this.resetCommonData(data)
-                })
-              })
-            } else {
-              _g.toastMsg('error', res.error)
-              setTimeout(() => {
-                router.replace('/')
-              }, 1500)
-            }
-            break
-          case 103:
-            _g.toastMsg('error', res.error)
-            setTimeout(() => {
-              router.replace('/')
-            }, 1500)
-            break
-          // case 400:
-          //   this.goback()
+          // case 101:
+          //   console.log('cookie = ', Cookies.get('rememberPwd'))
+          //   if (Cookies.get('rememberPwd')) {
+          //     let data = {
+          //       rememberKey: Lockr.get('rememberKey')
+          //     }
+          //     this.reAjax('admin/base/relogin', data).then((res) => {
+          //       this.handelResponse(res, (data) => {
+          //         this.resetCommonData(data)
+          //       })
+          //     })
+          //   } else {
+          //     _g.toastMsg('error', res.message)
+          //     setTimeout(() => {
+          //       router.replace('/')
+          //     }, 1500)
+          //   }
+          //   break
+          // case 103:
+          //   _g.toastMsg('error', res.message)
+          //   setTimeout(() => {
+          //     router.replace('/')
+          //   }, 1500)
           //   break
           default :
-            _g.toastMsg('error', res.error)
+            _g.toastMsg('error', res.message)
         }
       } else {
         console.log('default error')

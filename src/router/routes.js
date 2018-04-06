@@ -1,40 +1,28 @@
-// import Vue from 'vue'
-// import Router from 'vue-router'
-
+import Vue from 'vue'
+import VueRouter from 'vue-router'
 
 import Home from '../components/common/Home.vue'
 import Login from '../components/page/Login.vue'
 import ReadMe from '../components/page/ReadMe.vue'
 import File from '../components/page/File.vue'
 
+Vue.use(VueRouter)
 
-// Vue.use(Router)
-
-// export default new Router({
-//   mode: 'history',
-//   routes: [
-//     {
-//       path: '/',
-//       redirect: '/login'
-//     },
-//     {
-//       path: '/login',
-//       component: resolve => require(['../components/page/Login.vue'], resolve)
-//     }
-//   ]
-// })
-const routes = [
+export const routes = [
   { path: '/login', component: Login, name: 'login'},
   { path: '/', redirect: '/home' },
   {
     path: '/home',
     component: Home,
+    meta:{requireAuth:true},
     children: [
       {
+        meta:{requireAuth:true},
         path: '/',
         component: ReadMe
       },
       {
+        meta:{requireAuth:true},
         path: '/tools/file',
         component: File
      }
@@ -42,4 +30,9 @@ const routes = [
   }
 
 ]
-export default routes
+
+export default new VueRouter({
+  mode: 'history',
+  base: __dirname,
+  routes
+})

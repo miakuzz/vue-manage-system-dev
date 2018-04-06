@@ -36,7 +36,10 @@ const commonFn = {
         })
         break
       case 'error':
-        bus.$message.error(msg)
+        bus.$message({
+          message: msg,
+          type: 'error'
+        })
         break
     }
   },
