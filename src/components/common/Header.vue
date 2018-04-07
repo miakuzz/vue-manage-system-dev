@@ -17,6 +17,8 @@
 </template>
 
 <script>
+import http from '../../../static/js/http'
+
 export default {
   data() {
     return {
@@ -31,11 +33,17 @@ export default {
   },
   methods: {
     handleCommand(command) {
+      const self = this;
       if(command == 'loginout'){
-        alert(1)
+        self.apiPost('admin/user/logout', null).then((res) => {
+          self.handleResponse(res, (data) => {
+            router.replace('/login')
+          })
+        })
       }
     }
-  }
+  },
+  mixins: [http]
 }
 </script>
 

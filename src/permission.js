@@ -1,4 +1,4 @@
-import router from './router/routes'
+import router from '@/router/routes'
 import { getToken } from '@/utils/auth'
 import http from '../static/js/http'
 
@@ -10,9 +10,8 @@ router.beforeEach((to, from, next) => {
         next({ path: '/' })
       } else {
         // 这里获取用户信息
-        let data = {}
-        http.apiGet('admin/user/info', { token }).then((res) => {
-          http.handleResponse(res, (data) => {
+        http.methods.apiGet('admin/user/info', {params:{"token" : token}}).then((res) => {
+          http.methods.handleResponse(res, (data) => {
             next()
           }, () => {
             next({
