@@ -26,11 +26,10 @@ a{text-decoration: none}
   padding-right:0;
 }
 
-.el-table th{
-
+.el-table__footer-wrapper thead div, .el-table__header-wrapper thead div{
+  color: #1f2d3d;
 }
 
-.el-table__footer-wrapper thead div, .el-table__header-wrapper thead div{
-
-  color: #1f2d3d;
+.file-upload .el-upload.el-upload--text, .file-upload .el-upload-dragger{
+  width : 100%;
 }
