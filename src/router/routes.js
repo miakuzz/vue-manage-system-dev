@@ -5,6 +5,8 @@ import Home from '../components/common/Home.vue'
 import Login from '../components/page/Login.vue'
 import ReadMe from '../components/page/ReadMe.vue'
 import File from '../components/page/File.vue'
+import Editor from '../components/blog/Editor.vue'
+import Hash from '../components/hash/Hash.vue'
 
 Vue.use(VueRouter)
 
@@ -25,10 +27,19 @@ export const routes = [
         meta:{requireAuth:true},
         path: '/tools/file',
         component: File
-     }
+      },
+      {
+        meta:{requireAuth:true},
+        path: '/tools/hash',
+        component: Hash
+      },
+      {
+        meta:{requireAuth:true},
+        path: '/blog/editor',
+        component: Editor
+      }
     ]
   }
-
 ]
 
 export default new VueRouter({

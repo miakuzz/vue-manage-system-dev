@@ -14,8 +14,10 @@
     "babel-polyfill": "^6.26.0",
     "element-ui": "^2.2.2",
     "js-cookie": "^2.2.0",
+    "js-sha256": "^0.9.0",
     "lockr": "^0.8.4",
     "vue": "^2.5.2",
+    "vue-quill-editor": "^3.0.6",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
   },

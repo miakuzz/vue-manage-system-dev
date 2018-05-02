@@ -31,12 +31,27 @@
                     },
                     {
                         icon: 'el-icon-menu',
-                        index: '',
+                        index: '1',
                         title: '工具箱',
                         subs: [
                             {
                                 index: '/tools/file',
-                                title: '文件管理',
+                                title: '文件管理'
+                            },
+                            {
+                                index: '/tools/hash',
+                                title: '哈希值计算'
+                            }
+                        ]
+                    },
+                    {
+                        icon: 'el-icon-menu',
+                        index: '2',
+                        title: '博客管理',
+                        subs: [
+                            {
+                                index: '/blog/editor',
+                                title: '写文章',
                             }
                         ]
                     }
